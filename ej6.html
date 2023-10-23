@@ -9,11 +9,14 @@
 <form action="https://www.w3schools.com/action_page.php" method="post">
     <fieldset>
         <legend>Receta</legend>
-        <label for="nombre">Nombre de la receta: </label>
+
+        <label for="nombre">Nombre:</label>
         <input name="nombre" id="nombre" type="text"><br><br>
-        <label for="correo">Correo del autor: </label>
+
+        <label for="correo">Correo:</label>
         <input id="correo" name="correo" type="email"><br><br>
- 		<label>Momento para comer: </label>
+
+ 		<label>Momento: </label>
         <input name="momento" type="checkbox" id="momento" value="Desayuno">
         <label for="momento">Desayuno</label> 
         <input name="momento" type="checkbox" id="momento" value="Almuerzo"> 
@@ -24,19 +27,47 @@
         <label for="momento">Cena</label> 
         <input name="momento" type="checkbox" id="momento" value="Postre"> 
         <label for="momento">Postre</label><br><br>
-		 <label for="estudios">Ingrtedienter: </label>
-        <select name="estudios" id="estudios">
-            <optgroup label="Estudios Universitarios">
-                <option>Doctorado</option>
-                <option>Máster</option>
-                <option>Grado</option>
+
+		<label for="ingredientes">Ingredientes:</label>
+        <select name="ingredientes" id="ingredientes">
+            <optgroup label="Carne">
+                <option>Pollo</option>
+                <option>Cerdo</option>
+                <option>Ternera</option>
+                <option>Conejo</option>
+                <option>Cordero</option>
             </optgroup>
-            <optgroup label="Ciclo Formativo">
-                <option>Grado Superior</option>
-                <option>Grado Medio</option>
+            <optgroup label="Pescado">
+                <option>Merluza</option>
+                <option>Sardina</option>
+                <option>Salmón</option>
+                <option>Boquerón</option>
+                <option>Bacalao</option>
+                <option>Lubina</option>
+                <option>Atún</option>
+            </optgroup>
+            <optgroup label="Verdura">
+                <option>Lechuga</option>
+                <option>Tomate</option>
+                <option>Espárrago</option>
+                <option>Pimiento</option>
+                <option>Cebolla</option>
+                <option>Calabacín</option>
+                <option>Brócoli</option>
+                <option>Zanahoria</option>
+            </optgroup>
+            <optgroup label="Fruta">
+                <option>Naranja</option>
+                <option>Limón</option>
+                <option>Plátano</option>
+                <option>Manzana</option>
+                <option>Aguacate</option>
+                <option>Mango</option>
+                <option>Piña</option>
+                <option>Papaya</option>
             </optgroup>
         </select><br><br>
-
+ 
 
         <label for="socio">Socio:</label>
         <select name="socio" id="socio">
