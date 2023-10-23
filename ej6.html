@@ -13,7 +13,7 @@
         <label for="nombre">Nombre:</label>
         <input name="nombre" id="nombre" type="text"><br><br>
 
-        <label for="correo">Correo:</label>
+        <label for="correo">Correo del autor:</label>
         <input id="correo" name="correo" type="email"><br><br>
 
  		<label>Momento: </label>
@@ -29,7 +29,7 @@
         <label for="momento">Postre</label><br><br>
 
 		<label for="ingredientes">Ingredientes:</label>
-        <select name="ingredientes" id="ingredientes">
+        <select multiple name="ingredientes" id="ingredientes">
             <optgroup label="Carne">
                 <option>Pollo</option>
                 <option>Cerdo</option>
@@ -66,30 +66,25 @@
                 <option>Piña</option>
                 <option>Papaya</option>
             </optgroup>
-        </select><br><br>
- 
 
-        <label for="socio">Socio:</label>
-        <select name="socio" id="socio">
-            <!--Etiqueta option-->
-            <option value="value1">Sí<option>
-            <option value="value2" selected>No<option>
         </select><br><br>
-       
-        
-       
-        <label for="navegador">Elige tu navegador favorito: </label>
-        <input name="navegador" id="navegador" list="browsers">
-        <datalist name="browsers" id="browsers">
-            <option value="Chrome">
-            <option value="Firefox">
-            <option value="Internet Explorer">
-            <option value="Opera">
-            <option value="Safari">
-            <option value="Microsoft Edge">
-        </datalist><br><br>
-        <label for="mensaje">Escribe tu mensaje: </label>
-        <textarea rows="10" cols="50" placeholder="Mensaje" id="mensaje" name="mensaje" ></textarea>
+        <label for="tiempo">Tiempo de preparación: </label><br>
+        <input type="radio" id="horas" name="horas" value="0-horas">
+        <label for="0-horas">0 horas</label><br>
+        <input type="radio" id="horas" name="horas" value="1-horas">
+        <label for="1-horas">1 hora</label><br>
+        <input type="radio" id="horas" name="horas" value="2-horas">
+        <label for="2-horas">2 hora</label><br>
+        <br>
+        <input type="radio" id="minutos" name="minutos" value="15-minutos">
+        <label for="15-minutos">15 minutos</label><br>
+        <input type="radio" id="minutos" name="minutos" value="30-minutos">
+        <label for="30-minutos">30 minutos</label><br>
+        <input type="radio" id="minutos" name="minutos" value="45-minutos">
+        <label for="45-minutos">45 minutos</label><br><br>
+
+        <label for="foto">Añadir imagen</label><br>
+        <input type="file" id="minutos" name="enviar" value="enviar">
     </fieldset>
     <input type="submit" name="enviar" value="Enviar">
 </form>
