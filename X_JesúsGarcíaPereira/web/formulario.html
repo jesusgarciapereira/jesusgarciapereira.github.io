@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Formulario</title>
+</head>
+<body>
+	<fieldset>
+		<legend>Formulario de Contacto</legend>
+		<label for="nombre">Nombre:</label>
+		<input name="nombre" id="nombre" type="text" required><br><br>
+
+		<label for="correo">Correo Electrónico:</label>
+		<input id="correo" name="correo" type="email" required><br><br>
+
+		<label for="telefono">Teléfono:</label>
+		<input name="telefono" id="telefono" type="number" required><br><br>
+
+		<label for="asunto">Asunto:</label>
+		<input name="asunto" id="asunto" type="text" required><br><br>
+
+		<label for="mensaje">Mensaje: </label>
+		<textarea rows="10" cols="50" placeholder="Mensaje" id="mensaje" name="mensaje" ></textarea>
+
+		<br>
+		<br>
+
+		<label for="ayuda">¿En qué podemos ayudarte? (Selecciona una opción): </label><br>
+		<input type="radio" id="opcion1" name="opcion" value="opcion1">
+		<label for="opcion1"> Consulta sobre productos</label><br>
+		<input type="radio" id="opcion2" name="opcion" value="opcion2">
+		<label for="opcion1"> Solicitud de asistencia</label><br>
+		<input type="radio" id="opcion3" name="opcion" value="opcion3">
+		<label for="opcion1"> Comentarios y sugerencias</label>
+
+	</fieldset>
+	
+	<button type="submit">Enviar</button>
+	<button type="reset">Borrar</button>
+
+</body>
+</html>
