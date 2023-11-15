@@ -3,60 +3,78 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>4.1. Aplicando estilos</title>
+	<title></title>
 	<style type="text/css">
-		
+
 		#id1{
 			font-style: italic;
 			text-align: right;
 		}
+
 		#id2{
 			text-transform: uppercase;
 			text-decoration: line-through;		
 		}
+
 		#id3{
 			font-family: Verdana;
 			font-size: 1.2em;		
 		}
+
 		#id4{
 			font-weight: bold;
 			text-shadow: -4px 4px 2px darkgreen;
 		}
+
+		a{
+			color: white;
+			width: 100px;
+			height: 50px;
+		}
+
 		div{
-		
-
-		}
-		#div1{
-			
-			padding: 20px;
-			height: 200px;
+			padding: 10px;
 			width: 400px;
+			height: 200px;
+			border-radius: 10px;
+		}
+
+		a, div{
+			display: table-cell;
+		}
+
+		div p {
+			font-weight: bold;
+		}
+
+		.rojo {
+			background-color: red;
+		}
+
+		.verde {
+			background-color: green;
+		}
+
+		.azul {
+			background-color: blue;
+		}
+
+		#buscadores {
 			background-color: rgba(198, 213, 145, 0.8);
-			border-radius: 10px;
-			display: inline-block;
+		}
 
+		#redes {
+			background-color:  rgba(145, 213, 198, 0.7);
 		}
-		#div2{
-			
-			padding: 20px;
-			height: 200px;
-			width: 400px;
-			background-color: rgba(145, 213, 198, 0.7);
-			border-radius: 10px;
-			display: inline-grid;
+
+		#redes a{
+			display: block;
 		}
-		#div3{
-			
-			padding: 20px;
-			height: 200px;
-			width: 400px;
+
+		#noticias {
 			background-color: rgba(198, 145, 213, 0.7);
-			border-radius: 10px;
-			display: inline-block;
 		}
-		a{color: #ffffff;
-
-		}
+		
 	</style>
 </head>
 <body>
@@ -71,25 +89,25 @@
 	<p id="id4">Y por último, un texto en negrita y con sombrita en verde.</p>
 
 	<hr>
-	<div id ="div1">
+	<div id ="buscadores"><p>Buscadores:</p>
 
-		Buscadores: 
+	
 
-		<a href="https://duckduckgo.com/" style="background-color: red;">DuckDuckGo</a>
-		<a href="https://www.ecosia.org/?c=es" style="background-color: green;">Ecosia</a>
-		<a href="https://www.google.com/?hl=es" style="background-color: blue;">Google</a>
+		<a href="https://duckduckgo.com/" class="rojo">DuckDuckGo</a>
+		<a href="https://www.ecosia.org/?c=es" class="verde">Ecosia</a>
+		<a href="https://www.google.com/?hl=es" class="azul">Google</a>
 	</div>
-	<div id ="div2">Redes sociales:
-		<a href="https://www.facebook.com/?locale=es_ES" style="background-color: red;">Facebook</a>
-		<a href="https://twitter.com/?lang=es" style="background-color: green;">Twitter</a>
-		<a href="https://www.pinterest.es/" style="background-color: blue;">Pinterest</a>
+	<div id ="redes"><p>Redes sociales:</p>
+		<a href="https://www.facebook.com/?locale=es_ES" class="rojo">Facebook</a>
+		<a href="https://twitter.com/?lang=es" class="verde">Twitter</a>
+		<a href="https://www.pinterest.es/" class="azul">Pinterest</a>
 	</div>
-	<div id ="div3">Noticias:
+	<div id ="noticias"><p>Noticias:</p>
 
 		<a href="https://elpais.com/">El País</a>
 		<a href="https://www.eldiario.es/">El Diario</a>
 		<a href="https://www.elmundo.es/">El Mundo</a>
 	</div>
 
-	</body>
-	</html>
+</body>
+</html>
