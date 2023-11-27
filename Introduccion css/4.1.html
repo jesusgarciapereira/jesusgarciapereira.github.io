@@ -36,7 +36,8 @@
 			padding: 10px;
 			width: 400px;
 			height: 200px;
-			border-radius: 10px;
+			border-radius: 20px;
+			
 		}
 
 		a, div{
@@ -47,15 +48,15 @@
 			font-weight: bold;
 		}
 
-		.rojo {
+		.fondorojo {
 			background-color: red;
 		}
 
-		.verde {
+		.fondoverde {
 			background-color: green;
 		}
 
-		.azul {
+		.fondoazul {
 			background-color: blue;
 		}
 
@@ -73,8 +74,21 @@
 
 		#noticias {
 			background-color: rgba(198, 145, 213, 0.7);
+			background-image: url('img/Johann_Sebastian_Bach.jpg');
+			background-size: 100px;
+			background-position: right bottom;
+			background-repeat: no-repeat;
 		}
-		
+
+		#noticias a{
+			text-decoration: none;
+
+		}
+		#noticias a:hover{
+			color:black;
+			background-color: yellow;
+
+		}
 	</style>
 </head>
 <body>
@@ -90,17 +104,14 @@
 
 	<hr>
 	<div id ="buscadores"><p>Buscadores:</p>
-
-	
-
-		<a href="https://duckduckgo.com/" class="rojo">DuckDuckGo</a>
-		<a href="https://www.ecosia.org/?c=es" class="verde">Ecosia</a>
-		<a href="https://www.google.com/?hl=es" class="azul">Google</a>
+		<a href="https://duckduckgo.com/" class="fondorojo">DuckDuckGo</a>
+		<a href="https://www.ecosia.org/?c=es" class="fondoverde">Ecosia</a>
+		<a href="https://www.google.com/?hl=es" class="fondoazul">Google</a>
 	</div>
 	<div id ="redes"><p>Redes sociales:</p>
-		<a href="https://www.facebook.com/?locale=es_ES" class="rojo">Facebook</a>
-		<a href="https://twitter.com/?lang=es" class="verde">Twitter</a>
-		<a href="https://www.pinterest.es/" class="azul">Pinterest</a>
+		<a href="https://www.facebook.com/?locale=es_ES" class="fondorojo">Facebook</a>
+		<a href="https://twitter.com/?lang=es" class="fondoverde">Twitter</a>
+		<a href="https://www.pinterest.es/" class="fondoazul">Pinterest</a>
 	</div>
 	<div id ="noticias"><p>Noticias:</p>
 
