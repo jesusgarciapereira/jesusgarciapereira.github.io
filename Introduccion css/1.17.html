@@ -23,6 +23,19 @@
 			display: inline-flex;
 			margin: 10px;
 			width: 30%;
+			animation: change-color 3s linear infinite;
+		}
+
+		@keyframes change-color{
+			0%{
+				background-color: red;
+			}
+			50%{
+				background-color: yellow;
+			}
+			100%{
+				background-color: green;
+			}
 		}
 		p{
 			font-family: 'Ubuntu', sans-serif;
