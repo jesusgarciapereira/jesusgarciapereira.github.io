@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 1</title>
+    <!-- Esto es para poder usar el JQuery, debe estar en el head -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+
+<body>
+    <!-- Encabezado -->
+    <h1>Ejercicio 2: RETO</h1>
+
+    <p>
+        <!-- Formulario en el que añadiremos un texto en cada input, para luego tomar lo escrito con el método val()-->
+        <!-- placeholder es para que aparezca dicho texto en el recuadro antes de escribir nada-->
+        <input type="text" id="nombre" placeholder="Nombre">
+        <input type="text" id="apellidos" placeholder="Apellidos">
+        <input type="text" id="edad" placeholder="Edad">
+        <input type="text" id="ciudad" placeholder="Ciudad">
+        <!-- Crea un botón, al pulsarlo ejecuta la función comprobarLleno() -->
+        <button onclick="comprobarLleno()">Pulsa y observa cómo se rellena la tabla</button>
+    </p>
+
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Apellidos</th>
+                <th>Ciudad</th>
+                <th>Nombre</th>
+            </tr>
+        </thead>
+        <tbody id="nueva-fila">
+        </tbody>
+    </table>
+
+    <!-- Contenedor div para mostrar resultados en la consola -->
+    <div>
+        <script>
+
+            // Función que se ejecutará al pulsar el botón
+            function ejercicio2() {
+
+                // Creación del objeto "persona", tendrá los valores tomados del formulario mediante el método val()
+                let persona = {
+                    nombre: $("#nombre").val(),
+                    apellidos: $("#apellidos").val(),
+                    edad: $("#edad").val(),
+                    ciudad: $("#ciudad").val()
+                }
+
+                // Creamos un objeto, llamando a toJSON() será el objeto "persona" en formato JSON
+                let personaJSON = toJSON(persona);
+                // Mostramos dicho objeto por consola
+                console.log(personaJSON);
+
+                // Creamos un objeto, llamando a toObject() será el objeto "personaJSON" desesializado
+                let recuperado = toObject(personaJSON);
+                // Mostramos dicho objeto por consola
+                console.log(recuperado);
+
+                // Creamos un objeto, llamando a generaTr() con el objeto correspondiente
+                let recuperadoTr = generaTr(recuperado)
+                // Agregamos contenido llamando al método append() con el objeto anterior, dentro del elemento con el id "nueva-fila"
+                $("#nueva-fila").append(recuperadoTr);
+
+            }
+
+            // Función para convertir un objeto a formato JSON
+            function toJSON(objeto) {
+                // Devuelve el objeto del parámetro en formato JSON y serializado (stringify)
+                return JSON.stringify(objeto);
+            }
+
+            // Función para convertir una cadena JSON a un objeto JavaScript
+            function toObject(json) {
+                // Devuelve el objeto del parámetro en formato JSON y deserializado (parse)
+                return JSON.parse(json);
+            }
+
+            // Función que genera una fila de tabla con los elementos del objeto correspondiente
+            function generaTr(objeto) {
+                return "<tr>" +
+                    "<td>" + objeto.nombre + "</td>" +
+                    "<td>" + objeto.apellidos + "</td>" +
+                    "<td>" + objeto.edad + "</td>" +
+                    "<td>" + objeto.ciudad + "</td>" +
+                    "</tr>";
+            }
+
+            // Función que comprueba si todos los datos están rellenos, si lo están todos ejecutará la función ejercicio2() 
+            // Si falta alguno se mostrará el correspondiente mensaje de alerta
+            function comprobarLleno() {
+                if ($("#nombre").val() != "") {
+                    if ($("#apellidos").val() != "") {
+                        if ($("#edad").val() != "") {
+                            if ($("#ciudad").val() != "") {
+                                return ejercicio2();
+                            }
+                            else {
+                                alert("Campo 'Ciudad' vacío")
+                            }
+                        } else {
+                            alert("Campo 'Edad' vacío")
+                        }
+                    } else {
+                        alert("Campo 'Apellidos' vacío")
+                    }
+                } else {
+                    alert("Campo 'Nombre' vacío")
+                }
+            }
+
+        </script>
+    </div>
+</body>
+
+</html>

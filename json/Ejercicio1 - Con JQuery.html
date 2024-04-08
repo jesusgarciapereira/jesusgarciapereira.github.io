@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 1</title>
+    <!-- Esto es para poder usar el JQuery, debe estar en el head -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+
+<body>
+    <!-- Encabezado -->
+    <h1>Ejercicio 1</h1>
+
+    <!-- Crea un botón, al pulsarlo ejecuta la función ejercicio1() -->
+    <p>
+        <button onclick="ejercicio1()">Pulsa y observa la consola</button>
+    </p>
+
+    <!-- En este párrafo se mostrará lo que quiera poner en el id="deserializado" -->
+    <p id="deserializado"></p>
+
+    <!-- Contenedor div para mostrar resultados en la consola -->
+    <div>
+        <script>
+
+            // Función que se ejecutará al pulsar el botón
+            function ejercicio1() {
+
+                // Creación del objeto "persona"
+                let persona = {
+                    nombre: "Jesús",
+                    apellidos: "García Pereira",
+                    edad: 33,
+                    ciudad: "Sevilla"
+                }
+
+                // Creamos un objeto, llamando a toJSON() será el objeto "persona" en formato JSON
+                let personaJSON = toJSON(persona);
+                // Mostramos dicho objeto por consola
+                console.log(personaJSON);
+                // SALIDA: {"nombre":"Jesús","apellidos":"García Pereira","edad":33,"ciudad":"Sevilla"}
+
+                // Creamos un objeto, llamando a toObject() será el objeto "personaJSON" desesializado
+                let recuperado = toObject(personaJSON);
+                // Mostramos dicho objeto por consola
+                console.log(recuperado);
+                /* SALIDA: Object { nombre: "Jesús", apellidos: "García Pereira", edad: 33, ciudad: "Sevilla" }
+                            apellidos: "García Pereira"
+                            ciudad: "Sevilla"
+                            edad: 33
+                            nombre: "Jesús"   */
+
+                // Creamos una cadena de texto con los datos del objeto "recuperado"
+                let texto = "Nombre:" + recuperado.nombre;
+                texto += ", Apellidos:" + recuperado.apellidos;
+                texto += ", Edad:" + recuperado.edad;
+                texto += ", Ciudad:" + recuperado.ciudad;
+                // Mostramos el texto por consola (NO ES OBLIGATORIO)
+                console.log("Recuperado: " + texto);
+                // Mostrar el texto en el elemento HTML con id "deserializado"
+                // Con JQuery: document.getElementById("deserializado").innerHTML = "Recuperado: " + texto; lo sustituyes por..
+                $("#deserializado").text("Recuperado: " + texto);
+                
+
+            }
+
+            // Función para convertir un objeto a formato JSON
+            function toJSON(objeto) {
+                // Devuelve el objeto del parámetro en formato JSON y serializado (stringify)
+                return JSON.stringify(objeto);
+            }
+
+            // Función para convertir una cadena JSON a un objeto JavaScript
+            function toObject(json) {
+                // Devuelve el objeto del parámetro en formato JSON y deserializado (parse)
+                return JSON.parse(json);
+            }
+
+        </script>
+    </div>
+</body>
+
+</html>
